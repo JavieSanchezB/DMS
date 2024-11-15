@@ -67,8 +67,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       ];
 
       // Verificar que todas las columnas necesarias estén en el archivo
-      const excelColumns = Object.keys(data[0]);
-      const missingColumns = columns.filter(col => !excelColumns.includes(col));
+      // const excelColumns = Object.keys(data[0]);
+      // const missingColumns = columns.filter(col => !excelColumns.includes(col));
       // if (missingColumns.length > 0) {
       //   return res.status(400).json({ error: 'Faltan columnas en el archivo', missingColumns });
       // }
