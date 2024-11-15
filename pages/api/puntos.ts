@@ -24,7 +24,8 @@ export default async function handler(
 
     // Si se encuentra el punto de venta, devuelve los resultados
     res.status(200).json({ data: rows[0] });
-    @typescript-eslint/no-unused-vars
+    
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     // En caso de error en la consulta a la base de datos, devuelve un error 500
     res.status(500).json({ error: 'Error al consultar la base de datos' });
