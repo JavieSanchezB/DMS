@@ -37,7 +37,7 @@ export default function ConsultarPunto() {
       if (responseData.data) {
         setData(responseData.data);
         toast.success("IDPDV Encontrado", {
-          duration: 4000,
+          duration: 1000,
           position: "bottom-center",
         });
       } else {
@@ -127,14 +127,19 @@ export default function ConsultarPunto() {
 
   return (
     <div className="container">
-      <input
-        type="text"
-        value={codPunto}
-        onChange={handleCodPuntoChange}
-        placeholder="Ingrese el código de punto"
-        pattern="[0-9]*"
-        className="input"
-      />
+  <input
+  type="number"
+  value={codPunto}
+  onChange={(e) => {
+    const value = e.target.value;
+    // Verifica que el valor sea numérico antes de actualizar el estado
+    if (/^\d*$/.test(value)) {
+      setCodPunto(value);
+    }
+  }}
+  placeholder="Ingrese el código de punto"
+  className="input"
+/>
       <button onClick={fetchPunto} className="button">Consultar</button>
 
       {data && (
