@@ -13,6 +13,7 @@ export default function ConsultarPunto() {
   const [fechaHora, setFechaHora] = useState('');
   const [data, setData] = useState<VisitaData | null>(null);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleCodPuntoChange = (e: ChangeEvent<HTMLInputElement>) => {
     setCodPunto(e.target.value);
   };
